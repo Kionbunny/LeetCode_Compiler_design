@@ -1,4 +1,12 @@
-package PACKAGE_NAME;
+//interface ICompiler {
+//    void compile(String code);
+//}
 
-public class PythonCompiler {
+public class PythonCompiler implements ICompiler{
+
+    @Override
+    public void compile(String code) {
+      System.out.println("Python code is compiling  " + code);
+        System.out.println("Python code is compilation successful ✅ ");
+    }
 }

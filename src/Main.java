@@ -1,15 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Client calls the factory to get the appropriate compiler
+        // ICompiler compiler is the parent ref that will hold the child object
+        // say if the JavaCompiler is detected in Factory then it will hold the JavaCompiler child obj
+        // via instance variable compiler
+        ICompiler compiler = CompileFactory.getCompiler("PYTHON");// this will call the
+        // getCompiler() method in the CompileFactory class
+      // once the compiler is detected it will be attached to ref variable compiler
+        // Now, use the compiler to compile the code or call the compile method in the child class
+        compiler.compile("System.out.println('Hello, Java!');");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+//        if (language.equalsIgnoreCase("JAVA")) { IgnoreCase will ignore the case sensitivity of ch's
+//            return new JavaCompiler();
+//        }   if you dont want any case sensitivity then use IgnoreCase this will treat JAVA = java or
+        // JavA = jaVA
     }
 }
